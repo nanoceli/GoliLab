@@ -1,21 +1,13 @@
-import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
-import { StyleSheet, Text,TouchableOpacity, View, Image, Alert } from 'react-native';
+import { StyleSheet, Text,TouchableOpacity, View, Image, Alert, TextInput } from 'react-native';
 import porrito from './assets/porrito.png'
 import * as ImagePicker from 'expo-image-picker'
 import *  as Sharing from 'expo-sharing'
-import NavigationBar from 'react-native-navbar';
 
 export default function App() {
 let [Imagen, setImagen] = useState(null)
-const rightButtonConfig = {
-  title: 'Next',
-  handler: () => alert('hello!'),
-};
+const [text, onChangeText] = useState("Useless Text");
 
-const titleConfig = {
-  title: 'Hello, world',
-};
 
 let OpenImage = async () => {
  let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
@@ -35,15 +27,9 @@ const ShareImage = async () => {
 
   return (
     <View style={styles.container}>
-
-         <NavigationBar
-         
-        title={titleConfig}
-        rightButton={rightButtonConfig}
-      />
-      <Text style={styles.title}>Soy el mas picante papurri!</Text>
+     <View style={{flex:1, flexDirection:'row', position:'absolute', top:50}}><Image style={styles.img2} source={porrito}/><TextInput value={text} style={styles.input} onChangeText={onChangeText}></TextInput></View> 
+      <Text style={styles.title}>GoliLab</Text>
       <TouchableOpacity onPress={OpenImage}><Image style={styles.img} source={{uri: Imagen !== null ? Imagen.localUri : 'https://pbs.twimg.com/media/DfF4w36WAAAXl6y.jpg'}}/></TouchableOpacity>
-      <Image style={styles.img} source={porrito}/>
       {
         Imagen ?      
         <TouchableOpacity onPress={ShareImage} style={styles.button} ><Text style={styles.title}>Share Img</Text></TouchableOpacity>  :
@@ -61,7 +47,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  input: {
+    height: 40,
+    width:100,
+    margin: 12,
+    borderWidth: 1,
+    borderRadius:5,
+    backgroundColor:'white'
+  },
   title: {color:'white', fontSize: 30},
   img:{width:200, height:200, borderRadius:100, resizeMode:'contain'},
+  img2:{width:70, height:70, borderRadius:140, resizeMode:'contain'},
   button:{backgroundColor:'red', padding:7, width:100}
 });
