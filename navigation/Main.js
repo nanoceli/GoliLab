@@ -9,7 +9,7 @@ import TabTwoScreen from '../screens/TabTwoScreen';
 
 const BottomTab = createBottomTabNavigator();
 
-export default function BottomTabNavigator() {
+export default function Main() {
   const colorScheme = useColorScheme();
 
   return (
