@@ -1,13 +1,11 @@
 import * as React from 'react';
 import { StyleSheet, Image, SafeAreaView, Text, View } from 'react-native'
 
-
-
 const Header = () => {
     return (
         <View style={styles.header}>
             <Text style={styles.title}>
-                Goli Lab
+                GOLI LAB
             </Text>
         </View>
     )
@@ -20,10 +18,11 @@ const styles = StyleSheet.create({
         paddingTop:20,
         alignContent: "center",
         justifyContent: 'center',
-        backgroundColor: '#7EF9D3'
+        backgroundColor: '#747474'
     },
     title: {
-        fontSize:25
+        fontSize:25,
+        color:'#D6FFE6'
     }
 })
 
