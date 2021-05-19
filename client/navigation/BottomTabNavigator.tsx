@@ -4,8 +4,10 @@ import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
-import TabOneScreen from '../screens/TabOneScreen';
-import TabTwoScreen from '../screens/TabTwoScreen';
+import Inicio from '../screens/inicio';
+import Turnos from '../screens/turnos';
+import Estudios from '../screens/turnos';
+import Perfil from '../screens/perfil';
 import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -19,23 +21,40 @@ export default function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName="TabOne"
+      initialRouteName="Inicio"
       tabBarOptions={{
         activeTintColor: '#FF9D36', activeBackgroundColor: '#D6FFE6'
       }}>
 
       <BottomTab.Screen
-        name="TabOne"
-        component={TabOneNavigator}
+        name="Incio"
+        component={Inicio}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
         }}
       />
+
       <BottomTab.Screen
-        name="TabTwo"
-        component={TabTwoNavigator}
+        name="Turnos"
+        component={Turnos}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="calendar" color={color} />,
+        }}
+      />
+
+      <BottomTab.Screen
+        name="Estudios"
+        component={Estudios}
+        options={{
+          tabBarIcon: ({ color }) => <TabBarIcon name="document-text-outline" color={color} />,
+        }}
+      />
+
+      <BottomTab.Screen
+        name="Perfil"
+        component={Perfil}
+        options={{
+          tabBarIcon: ({ color }) => <TabBarIcon name="person" color={color} />,
         }}
       />
     </BottomTab.Navigator>
@@ -85,19 +104,3 @@ function TabTwoNavigator() {
     </View>
   );
 }
-
-// function TabTwoNavigator() {
-//   return (
-//     <TabTwoStack.Navigator >
-//       <TabTwoStack.Screen
-//         name="TabTwoScreen"
-//         component={TabTwoScreen}
-//         options={{
-//           title: 'Tab Two Title', headerStyle: {
-//             backgroundColor: '#f4511e',
-//           }
-//         }}
-//       />
-//     </TabTwoStack.Navigator>
-//   );
-// }
