@@ -8,7 +8,6 @@ export default function Gradiente(){
 
     return (
         <LinearGradient
-        // Background Linear Gradient
         colors={['rgba(254,187,187,0.8)', 'transparent']}
         style={styles.background}
       ></LinearGradient>

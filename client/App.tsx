@@ -1,25 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
-import * as React from 'react';
+import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import useCachedResources from './hooks/useCachedResources';
-import useColorScheme from './hooks/useColorScheme';
-import Navigation from './navigation';
-import { NavigationContainer } from '@react-navigation/native';
-import Header from './screens/header'
+import Header from './Screens/header'
+import Footer from './Screens/footer'
+import { NavigationContainer } from "@react-navigation/native";
+import Main from './Navigation/index'
 
 export default function App() {
-  const isLoadingComplete = useCachedResources();
-  const colorScheme = useColorScheme();
-
-  if (!isLoadingComplete) {
-    return null
-  } else {
-    return (
-      <NavigationContainer>
-        <Header/>
-        <Navigation colorScheme={colorScheme} />
-        <StatusBar />
-      </NavigationContainer>
-    );
-  }
+  return (
+    <NavigationContainer>
+      <Header />
+      <Main />
+      <StatusBar style="auto" />
+    </NavigationContainer>
+  );
 }

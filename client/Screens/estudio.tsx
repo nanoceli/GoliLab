@@ -1,6 +1,6 @@
 import * as React from 'react';
-import Gradiente from '../components/gradiente';
-import { Text, View } from '../components/Themed';
+import { Text, View, Image } from "react-native";
+import Gradiente from '../Components/gradient';
 
 export default function Estudios() {
   return (
