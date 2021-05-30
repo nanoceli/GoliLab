@@ -1,17 +1,43 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import Header from './Screens/header'
-import Footer from './Screens/footer'
 import { NavigationContainer } from "@react-navigation/native";
-import Main from './Navigation/index'
+import { Header } from './src/components/header'
+import { Home } from './src/containers/home'
 
 export default function App() {
-  return (
+
+  let usuarioLog: string = 's';
+
+  return (usuarioLog === '' ?
     <NavigationContainer>
       <Header />
-      <Main />
+      <Home />
+    </NavigationContainer> :
+    <NavigationContainer>
+      <Header />
+      <Home />
       <StatusBar style="auto" />
     </NavigationContainer>
-  );
+
+  )
+
 }
+
+
+// import React from 'react';
+// import { SafeAreaView, StatusBar, } from 'react-native';
+// import { Provider } from 'react-redux';
+// import { Home } from './src/containers/home';
+// import { store } from './src/redux';
+
+// const App: React.FC = () => {
+//   return (
+//     <Provider store={store}>
+//       <StatusBar barStyle="dark-content" hidden />
+//       <SafeAreaView>
+//         <Home />
+//       </SafeAreaView>
+//     </Provider>
+//   );
+// };
+

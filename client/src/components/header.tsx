@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { StyleSheet, Image, SafeAreaView, Text, View } from 'react-native'
 
-const Header = () => {
+export const Header = () => {
     return (
         <View style={styles.header}>
             <Text style={styles.title}>
@@ -25,5 +25,3 @@ const styles = StyleSheet.create({
         color:'#D6FFE6'
     }
 })
-
-export default Header;

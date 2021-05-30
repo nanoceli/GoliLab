@@ -1,11 +1,11 @@
 import { Ionicons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import * as React from 'react';
-import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
-import Inicio from '../Screens/inicio'
-import Turnos from '../Screens/turnos'
-import Perfil from '../Screens/perfil'
-import Estudios from '../Screens/estudio'
+import { BottomTabParamList } from '../types';
+import Inicio from '../components/inicio'
+import Turnos from '../components/turnos'
+import Perfil from '../components/perfil'
+import Estudios from '../components/estudio'
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -17,11 +17,12 @@ export default function Main() {
         activeTintColor: '#FF9D36', activeBackgroundColor: '#D6FFE6'
       }}>
 
-<BottomTab.Screen
+      <BottomTab.Screen
         name="Inicio"
         component={Inicio}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
+          
         }}
       />
 
