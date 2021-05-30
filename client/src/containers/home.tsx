@@ -2,6 +2,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
 import { RootStackParamList } from '../types';
 import Main from './main';
+import {Header} from '../components/header'
 
 const Stack = createStackNavigator<RootStackParamList>();
 
