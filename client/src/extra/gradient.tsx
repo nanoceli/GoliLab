@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { LinearGradient } from 'expo-linear-gradient';
 import { StyleSheet, Dimensions } from 'react-native';
-
 let ScreenHeight = Dimensions.get("window").height;
 
 export default function Gradiente(){
@@ -16,7 +15,7 @@ export default function Gradiente(){
 
 const styles = StyleSheet.create({
     background: {
-      position: 'absolute',
+      position: 'relative',
       left: 0,
       right: 0,
       top: 0,
